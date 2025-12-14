@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <p class="subtitle">Get real-time weather updates for any city</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name (e.g., London, Tokyo)">
+                <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+                <button id="locationBtn"><i class="fas fa-location-crosshairs"></i> Use My Location</button>
+            </div>
+        </div>
+
+        <div class="weather-container">
+            <!-- Current Weather -->
+            <div class="current-weather" id="currentWeather">
+                <div class="weather-header">
+                    <h2>Current Weather</h2>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="cityName">Search for a city</span>
+                    </div>
+                </div>
+                
+                <div class="weather-info">
+                    <div class="temperature">
+                        <div class="temp-main" id="temperature">--°C</div>
+                        <div class="temp-feels">Feels like: <span id="feelsLike">--°C</span></div>
+                    </div>
+                    
+                    <div class="weather-icon">
+                        <i class="fas fa-sun" id="weatherIcon"></i>
+                        <div class="condition" id="weatherCondition">--</div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity</span>
+                            <div id="humidity">--%</div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind Speed</span>
+                            <div id="windSpeed">-- m/s</div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>Pressure</span>
+                            <div id="pressure">-- hPa</div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility</span>
+                            <div id="visibility">-- km</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast (Next 5 Days) -->
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-cards" id="forecastContainer">
+                    <div class="forecast-empty">
+                        <i class="fas fa-cloud-sun"></i>
+                        <p>Search a city to see forecast</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Searches -->
+            <div class="recent-searches">
+                <h3>Recent Searches</h3>
+                <div class="recent-list" id="recentSearches">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by OpenWeatherMap API | Made with <i class="fas fa-heart"></i> for Weather Enthusiasts</p>
+        </footer>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Fetching weather data...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
