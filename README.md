@@ -1,2 +1,2 @@
 My first project 🎊🎊
-calculator.html... it's free (for now)
+Simple Weather Forecasting App.. it's free
